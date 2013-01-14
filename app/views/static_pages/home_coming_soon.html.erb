@@ -1,0 +1,31 @@
+<% if signed_in? %>
+  <div class="row">
+    <div class="span7">
+      <h3>Recipe Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+    <aside class="span5">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/recipe_form' %>
+      </section>
+    </aside>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to YumBin.com</h1>
+
+    <h2>
+     This is the home page for the
+      <a href="#">YumBin</a>
+      application.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
